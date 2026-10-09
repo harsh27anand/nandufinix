@@ -156,7 +156,7 @@
     .cell-label.gold { background: var(--yellow); color: #000; }
     .cell-label.pink { background: var(--pink); }
     .cell-label.orange { background: var(--orange); }
-    .cell-label.green { background: var(--green); }
+    .cell-label.green { background: var(--green); color: #000; }
     @media (max-width: 680px) {
       .bento { grid-template-columns: 1fr; }
       .cell.span2 { grid-column: span 1; }
@@ -178,6 +178,44 @@
     .about h3 { font-family: 'Space Grotesk', sans-serif; font-size: 1.05rem; margin-bottom: 10px; color: #c4b5fd; }
     .about p { color: #cbd5e1; font-size: 0.9rem; line-height: 1.75; }
     .about b { color: #e9d5ff; }
+
+    /* ===== GEAR + BLINKIT ROW ===== */
+    .gear, .blinkit { display: flex; flex-direction: column; }
+    .gear h3, .blinkit h3 { font-family: 'Space Grotesk', sans-serif; font-size: 1.05rem; }
+    .gear p, .blinkit p { color: var(--muted); font-size: 0.88rem; line-height: 1.6; margin-top: 10px; }
+    .gear b, .blinkit b { color: var(--text); }
+    .cell-note { margin-top: 12px; font-size: 0.7rem; color: #71717a; line-height: 1.5; }
+    .cta {
+      display: inline-block; align-self: flex-start; margin-top: auto; padding: 13px 24px;
+      color: #000; font-weight: 900; text-decoration: none;
+      border: 2px solid #000; border-radius: 12px; box-shadow: 4px 4px 0 #000;
+      transition: all 0.15s ease; font-size: 0.92rem;
+    }
+    .cta:hover { transform: translate(-2px, -2px); box-shadow: 7px 7px 0 #000; }
+
+    .gear:hover { box-shadow: 7px 7px 0 rgba(253, 224, 71, 0.45); border-color: var(--yellow); }
+    .gear h3 { color: var(--yellow); }
+    .gear .cta { background: var(--yellow); }
+    .tags { display: flex; flex-wrap: wrap; gap: 8px; margin: 14px 0 18px; }
+    .tag {
+      font-size: 0.72rem; font-weight: 800; color: #fde68a;
+      border: 2px solid rgba(253, 224, 71, 0.35); border-radius: 999px; padding: 5px 12px;
+    }
+
+    .blinkit:hover { box-shadow: 7px 7px 0 rgba(34, 197, 94, 0.45); border-color: var(--green); }
+    .blinkit h3 { color: #86efac; }
+    .blinkit .cta { background: var(--green); }
+    .steps { list-style: none; counter-reset: step; margin: 14px 0 18px; }
+    .steps li {
+      counter-increment: step; display: flex; align-items: center; gap: 10px;
+      font-size: 0.86rem; color: #cbd5e1; margin-bottom: 8px;
+    }
+    .steps li::before {
+      content: counter(step); flex: none; width: 22px; height: 22px;
+      display: grid; place-items: center;
+      background: var(--green); color: #000; font-weight: 900; font-size: 0.72rem;
+      border: 2px solid #000; border-radius: 6px;
+    }
 
     /* ===== MILESTONES ===== */
     .miles h3 { font-family: 'Space Grotesk', sans-serif; color: var(--yellow); font-size: 1.05rem; margin-bottom: 16px; }
@@ -332,6 +370,37 @@
         Currently pursuing <b>MTech in Artificial Intelligence</b>, permanently a <b>Johnson main</b>.
         Streams regularly, runs giveaways, and builds a friendly gaming community on Discord.
       </p>
+    </div>
+
+    <!-- Amazon gear (affiliate) -->
+    <div class="cell gear">
+      <span class="cell-label gold">My Setup</span>
+      <h3>🛒 Gear I Actually Use</h3>
+      <p>
+        Asked on stream what tab, keyboard or mic I use? It's all in one place —
+        my <b>Amazon picks</b>, the same stuff sitting on my desk.
+      </p>
+      <div class="tags">
+        <span class="tag">🎮 Streaming Gear</span>
+        <span class="tag">💪 Gym & Health</span>
+        <span class="tag">🧴 Skincare</span>
+      </div>
+      <a class="cta" href="https://amzn.in/d/01IjChlw" target="_blank" rel="noopener sponsored">Shop My Amazon Picks →</a>
+      <div class="cell-note">As an Amazon Associate I earn from qualifying purchases • No extra cost to you</div>
+    </div>
+
+    <!-- Blinkit order via Discord -->
+    <div class="cell blinkit">
+      <span class="cell-label green">Feed The Streamer</span>
+      <h3>🛵 Send Me A Blinkit Order</h3>
+      <p>Want to send snacks or a drink mid-stream? Orders go through <b>Deej</b> on Discord — here's how:</p>
+      <ol class="steps">
+        <li>Join the Discord server</li>
+        <li>Message Deej with what you want to send</li>
+        <li>Deej places the order — it lands on stream</li>
+      </ol>
+      <a class="cta" href="https://discord.gg/fm7QsEKTMC" target="_blank" rel="noopener">Message Deej On Discord →</a>
+      <div class="cell-note">Orders only through Deej • Ignore anyone else who DMs you about it</div>
     </div>
 
     <!-- Milestones -->
