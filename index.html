@@ -269,6 +269,15 @@
     }
     .tts-mini:hover { filter: brightness(1.08); }
 
+
+    /* Main hub grid */
+    .hub { display: grid; gap: 16px; }
+    .hub .o1 { order: 1; } .hub .o2 { order: 2; } .hub .o3 { order: 3; } .hub .o4 { order: 4; }
+    @media (min-width: 640px) {
+      .hub { grid-template-columns: 1fr 1fr; }
+      .hub .o1 { order: 1; } .hub .o4 { order: 2; } .hub .o2 { order: 3; } .hub .o3 { order: 4; }
+    }
+
     /* Generic cards */
     .grid2 { display: grid; gap: 16px; }
     @media (min-width: 640px) { .grid2 { grid-template-columns: 1fr 1fr; } }
@@ -412,34 +421,9 @@
       <span class="tts-note">tipsonstream.in/tip/nandufinix • Secure • Shows on stream instantly</span>
     </a>
 
-    <!-- Gifts & Amazon: right after TTS -->
-    <p class="eyebrow rise" style="--i:2">Send a gift or shop my setup</p>
-    <div class="grid2">
-      <div class="card gear rise" style="--i:11">
-        <h3><span class="em">🛒</span>Gear I actually use</h3>
-        <p>Asked on stream what tab, keyboard or mic I use? It's all in my <b>Amazon picks</b>, the same stuff on my desk.</p>
-        <div class="tags"><span>🎮 Streaming gear</span><span>💪 Gym &amp; health</span><span>🧴 Skincare</span></div>
-        <a class="link-btn" href="https://amzn.in/d/01IjChlw" target="_blank" rel="noopener sponsored" data-track="amazon">Shop my picks →</a>
-        <p class="note">As an Amazon Associate I earn from qualifying purchases, at no extra cost to you.</p>
-      </div>
-
-      <div class="card gift rise" style="--i:12">
-        <h3><span class="em">🎁</span>Want to send something?</h3>
-        <p>Zero pressure, showing up to the stream is plenty ❤️ If you still want to, <b>Deej</b> handles it on Instagram.</p>
-        <ol class="steps">
-          <li>Open Deej's Instagram, @hardik_3060</li>
-          <li>Message him what you'd like to send</li>
-          <li>Deej takes it from there</li>
-        </ol>
-        <a class="link-btn" href="https://www.instagram.com/hardik_3060/" target="_blank" rel="noopener" data-track="deej">Message Deej →</a>
-        <p class="note">Any app works: Amazon, Flipkart, Myntra, Meesho, Blinkit, Zomato. Only through Deej, so my address stays private. Already in the server? <a href="https://discord.gg/fm7QsEKTMC" target="_blank" rel="noopener">Find Deej on Discord</a></p>
-      </div>
-    </div>
-
-    <!-- Finix ecosystem: the two things I run -->
-    <p class="eyebrow rise" style="--i:2">The Finix universe</p>
-    <div class="duo">
-      <a class="feature store rise" style="--i:2" href="https://finixstore.in/?utm_source=nandufinix.com&utm_medium=linkhub&utm_campaign=hub" target="_blank" rel="noopener" data-track="finix_store">
+    <!-- Desktop: Store | Arena, then Gear | Gift.  Phone: Store, Gear, Gift, Arena -->
+    <div class="hub">
+      <a class="feature store rise o1" style="--i:2" href="https://finixstore.in/?utm_source=nandufinix.com&utm_medium=linkhub&utm_campaign=hub" target="_blank" rel="noopener" data-track="finix_store">
         <svg class="art" viewBox="0 0 100 100" aria-hidden="true">
           <defs><linearGradient id="gem" x1="0" y1="0" x2="1" y2="1"><stop offset="0" stop-color="#bcd3ff"/><stop offset=".55" stop-color="#7aa7ff"/><stop offset="1" stop-color="#3f63c7"/></linearGradient></defs>
           <path d="M28 14h44l18 22-40 52L10 36Z" fill="url(#gem)"/>
@@ -458,7 +442,7 @@
         <span class="btn">Top up now <span aria-hidden="true">→</span></span>
       </a>
 
-      <a class="feature arena rise" style="--i:3" href="https://play.nandufinix.com/?utm_source=nandufinix.com&utm_medium=linkhub&utm_campaign=hub" target="_blank" rel="noopener" data-track="finix_arena">
+      <a class="feature arena rise o4" style="--i:3" href="https://play.nandufinix.com/?utm_source=nandufinix.com&utm_medium=linkhub&utm_campaign=hub" target="_blank" rel="noopener" data-track="finix_arena">
         <svg class="art" viewBox="0 0 100 100" aria-hidden="true">
           <defs><linearGradient id="cup" x1="0" y1="0" x2="0" y2="1"><stop offset="0" stop-color="#ffe3a3"/><stop offset="1" stop-color="#c98600"/></linearGradient></defs>
           <path d="M28 12h44v20a22 22 0 0 1-44 0Z" fill="url(#cup)"/>
@@ -478,6 +462,26 @@
         </ul>
         <span class="btn">Enter the arena <span aria-hidden="true">→</span></span>
       </a>
+
+      <div class="card gear rise o2" style="--i:4">
+        <h3><span class="em">🛒</span>Gear I actually use</h3>
+        <p>Asked on stream what tab, keyboard or mic I use? It's all in my <b>Amazon picks</b>, the same stuff on my desk.</p>
+        <div class="tags"><span>🎮 Streaming gear</span><span>💪 Gym &amp; health</span><span>🧴 Skincare</span></div>
+        <a class="link-btn" href="https://amzn.in/d/01IjChlw" target="_blank" rel="noopener sponsored" data-track="amazon">Shop my picks →</a>
+        <p class="note">As an Amazon Associate I earn from qualifying purchases, at no extra cost to you.</p>
+      </div>
+
+      <div class="card gift rise o3" style="--i:5">
+        <h3><span class="em">🎁</span>Want to send something?</h3>
+        <p>Zero pressure, showing up to the stream is plenty ❤️ If you still want to, <b>Deej</b> handles it on Instagram.</p>
+        <ol class="steps">
+          <li>Open Deej's Instagram, @hardik_3060</li>
+          <li>Message him what you'd like to send</li>
+          <li>Deej takes it from there</li>
+        </ol>
+        <a class="link-btn" href="https://www.instagram.com/hardik_3060/" target="_blank" rel="noopener" data-track="deej">Message Deej →</a>
+        <p class="note">Any app works: Amazon, Flipkart, Myntra, Meesho, Blinkit, Zomato. Only through Deej, so my address stays private. Already in the server? <a href="https://discord.gg/fm7QsEKTMC" target="_blank" rel="noopener">Find Deej on Discord</a></p>
+      </div>
     </div>
 
     <!-- Watch & hang out -->
