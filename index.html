@@ -163,7 +163,7 @@
     .chips { display: flex; flex-wrap: wrap; gap: 8px; justify-content: center; margin-top: 16px; }
     .chip { font-size: 0.74rem; font-weight: 700; color: var(--soft); border: 1px solid var(--mist); background: rgba(8, 13, 26, 0.5); padding: 5px 11px; border-radius: 999px; }
 
-    .socials { display: grid; grid-template-columns: repeat(4, 1fr); gap: 10px; margin-top: 22px; }
+    .socials { display: grid; grid-template-columns: repeat(4, 1fr); gap: 10px; margin-top: 12px; }
     .soc {
       display: grid; place-items: center; gap: 6px; padding: 12px 4px 10px;
       border-radius: 16px; border: 1px solid var(--mist); background: rgba(8, 13, 26, 0.55);
@@ -234,6 +234,41 @@
     }
     .feature:hover .btn { gap: 12px; }
 
+
+    /* ===== TTS donation (top of page) ===== */
+    .tts {
+      position: relative; overflow: hidden; display: grid; gap: 14px; text-decoration: none;
+      padding: 22px 22px 18px; border-radius: 24px; isolation: isolate;
+      border: 1px solid rgba(244, 114, 182, 0.55);
+      background: linear-gradient(135deg, rgba(244, 114, 182, 0.22), rgba(255, 107, 91, 0.12) 45%, var(--card) 80%);
+      box-shadow: 0 20px 60px -30px rgba(244, 114, 182, 0.8);
+      transition: transform .2s ease, box-shadow .2s ease;
+    }
+    .tts:hover { transform: translateY(-3px); box-shadow: 0 24px 70px -26px rgba(244, 114, 182, 0.95); }
+    .tts-live { display: inline-flex; align-self: start; justify-self: start; align-items: center; gap: 8px; font-size: 0.7rem; font-weight: 800; letter-spacing: 0.12em; text-transform: uppercase; color: #ff9b9b; background: rgba(255, 75, 75, 0.12); border: 1px solid rgba(255, 75, 75, 0.4); padding: 5px 11px; border-radius: 999px; }
+    .tts-live i { width: 8px; height: 8px; border-radius: 50%; background: #ff4b4b; animation: pulseRed 1.6s infinite; }
+    @keyframes pulseRed { 0% { box-shadow: 0 0 0 0 rgba(255, 75, 75, 0.7); } 70% { box-shadow: 0 0 0 8px rgba(255, 75, 75, 0); } 100% { box-shadow: 0 0 0 0 rgba(255, 75, 75, 0); } }
+    .tts-body { display: flex; gap: 14px; align-items: flex-start; }
+    .tts-ic { flex: none; width: 52px; height: 52px; border-radius: 16px; display: grid; place-items: center; font-size: 1.6rem; background: rgba(244, 114, 182, 0.18); }
+    .tts b { display: block; font-family: var(--display); font-size: 1.45rem; font-weight: 800; letter-spacing: -0.02em; line-height: 1.15; }
+    .tts small { display: block; color: var(--soft); font-size: 0.92rem; margin-top: 4px; }
+    .tts small strong { color: var(--ink); }
+    .tts-btn { display: flex; align-items: center; justify-content: center; gap: 8px; padding: 14px 20px; border-radius: 16px; background: linear-gradient(90deg, var(--pink), var(--coral)); color: #1a0310; font-weight: 900; font-size: 1.02rem; transition: gap .18s; }
+    .tts:hover .tts-btn { gap: 12px; }
+    .tts-note { font-size: 0.74rem; color: var(--faint); text-align: center; }
+    @media (min-width: 640px) {
+      .tts { grid-template-columns: 1fr auto; column-gap: 24px; align-items: center; }
+      .tts-live, .tts-body, .tts-note { grid-column: 1; }
+      .tts-btn { grid-column: 2; grid-row: 1 / span 3; }
+      .tts-note { text-align: left; }
+    }
+    .tts-mini {
+      display: flex; align-items: center; justify-content: center; gap: 8px; margin-top: 20px;
+      padding: 13px 16px; border-radius: 16px; text-decoration: none; font-weight: 900; font-size: 0.95rem;
+      background: linear-gradient(90deg, var(--pink), var(--coral)); color: #1a0310; transition: filter .15s;
+    }
+    .tts-mini:hover { filter: brightness(1.08); }
+
     /* Generic cards */
     .grid2 { display: grid; gap: 16px; }
     @media (min-width: 640px) { .grid2 { grid-template-columns: 1fr 1fr; } }
@@ -254,12 +289,6 @@
     .solid { background: var(--c); color: #1a0c03; border-color: var(--c); }
     .solid:hover { background: var(--c); filter: brightness(1.08); }
 
-    .support { --c: var(--pink); background: linear-gradient(135deg, rgba(244, 114, 182, 0.12), var(--card) 60%); }
-    .support h3 { font-size: 1.3rem; }
-    @media (min-width: 640px) {
-      .support { display: grid; grid-template-columns: 1fr auto; align-items: center; column-gap: 24px; }
-      .support .link-btn { margin-top: 0; grid-row: 1 / span 3; grid-column: 2; }
-    }
     .gear { --c: var(--saffron); }
     .gift { --c: var(--leaf); }
     .contact { --c: var(--diamond); }
@@ -335,6 +364,8 @@
       <span class="chip">🌙 Funny night streams</span>
     </div>
 
+    <a class="tts-mini" href="https://tipsonstream.in/tip/nandufinix" target="_blank" rel="noopener" data-track="donate_tts_profile">🎙️ TTS donation on stream</a>
+
     <nav class="socials" aria-label="Social links">
       <a class="soc yt" href="https://www.youtube.com/@NanduFinix" target="_blank" rel="noopener" data-track="youtube_icon">
         <svg viewBox="0 0 24 24" fill="currentColor" aria-hidden="true"><path d="M23 7.2a3 3 0 0 0-2.1-2.1C19 4.6 12 4.6 12 4.6s-7 0-8.9.5A3 3 0 0 0 1 7.2 31 31 0 0 0 .5 12 31 31 0 0 0 1 16.8a3 3 0 0 0 2.1 2.1c1.9.5 8.9.5 8.9.5s7 0 8.9-.5a3 3 0 0 0 2.1-2.1c.4-1.6.5-4.8.5-4.8s0-3.2-.5-4.8ZM9.7 15V9l5.8 3-5.8 3Z"/></svg>
@@ -369,8 +400,22 @@
   <!-- ===== CONTENT ===== -->
   <main class="content">
 
+    <!-- Live TTS donation: first thing viewers see -->
+    <a class="tts rise" style="--i:1" href="https://tipsonstream.in/tip/nandufinix" target="_blank" rel="noopener" data-track="donate_tts_top">
+      <span class="tts-live"><i></i>Watching live?</span>
+      <span class="tts-body">
+        <span class="tts-ic" aria-hidden="true">🎙️</span>
+        <span>
+          <b>Send a TTS donation</b>
+          <small>Tip any amount and your message is <strong>read out live on stream</strong> with text-to-speech. Goes straight to the stream and funds giveaways.</small>
+        </span>
+      </span>
+      <span class="tts-btn">💖 Tip &amp; send TTS <span aria-hidden="true">→</span></span>
+      <span class="tts-note">tipsonstream.in/tip/nandufinix • Secure • Shows on stream instantly</span>
+    </a>
+
     <!-- Finix ecosystem: the two things I run -->
-    <p class="eyebrow rise" style="--i:1">The Finix universe</p>
+    <p class="eyebrow rise" style="--i:2">The Finix universe</p>
     <div class="duo">
       <a class="feature store rise" style="--i:2" href="https://finixstore.in/?utm_source=nandufinix.com&utm_medium=linkhub&utm_campaign=hub" target="_blank" rel="noopener" data-track="finix_store">
         <svg class="art" viewBox="0 0 100 100" aria-hidden="true">
@@ -438,15 +483,6 @@
       </a>
     </div>
 
-    <!-- Support -->
-    <p class="eyebrow rise" style="--i:9">Support the stream</p>
-    <div class="card support rise" style="--i:10">
-      <h3><span class="em">💖</span>Fuel the streams</h3>
-      <p>Every donation upgrades stream quality, funds giveaways and keeps the late-night MLBB chaos alive. Your message gets read out on stream with TTS.</p>
-      <a class="link-btn solid" href="https://tipsonstream.in/tip/nandufinix" target="_blank" rel="noopener" data-track="donate">Donate on stream →</a>
-      <p class="note">Secure • Instant TTS on stream • Goes straight to the stream</p>
-    </div>
-
     <div class="grid2">
       <div class="card gear rise" style="--i:11">
         <h3><span class="em">🛒</span>Gear I actually use</h3>
@@ -509,6 +545,7 @@
 
 <footer>
   <nav aria-label="Finix sites">
+    <a href="https://tipsonstream.in/tip/nandufinix" target="_blank" rel="noopener">🎙️ TTS donation</a>
     <a href="https://finixstore.in" target="_blank" rel="noopener">💎 Finix Store</a>
     <a href="https://play.nandufinix.com" target="_blank" rel="noopener">🏆 FinixArena</a>
     <a href="https://www.youtube.com/@NanduFinix" target="_blank" rel="noopener">📺 YouTube</a>
